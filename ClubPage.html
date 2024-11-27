@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Футбольные клубы</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Футбольные клубы</h1>
+    
+
+    <div id="clubApp"></div>
+    
+    <script type="text/babel" src="ClubInfo.jsx"></script>
+    <script type="text/babel" src="ClubPoster.jsx"></script>
+    <script type="text/babel" src="ClubAchiev.jsx"></script>
+    <script type="text/babel" src="ClubPlayers.jsx"></script>
+
+    <script type="text/babel">
+        const clubsList = [
+        {
+        info: {
+          name: "ФК Барселона",
+          city: "Барселона",
+          founded: 1899,
+          crest: "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/800px-FC_Barcelona.svg.png",
+        },
+        achievements: ["5 побед в Лиге чемпионов УЕФА", "195 побед в матчах Лиги чемпионов УЕФА", "26 титулов Ла Лиги"],
+        roster: ["Лионель Месси", "Жерар Пике", "Серхио Бускетс"],
+        },
+        {
+        info: {
+          name: "Реал Мадрид",
+          city: "Мадрид",
+          founded: 1902,
+          crest: "https://upload.wikimedia.org/wikipedia/ru/thumb/8/8a/FC_Real_Madrid_Logo.svg/800px-FC_Real_Madrid_Logo.svg.png",
+        },
+        achievements: ["15 побед в Лиге чемпионов УЕФА", "3 победы в Лиге чемпионов подряд", "278 побед в матчах Лиги чемпионов УЕФА"],
+        roster: ["Карим Бензема", "Лука Модрич", "Тони Кроос"],
+        },
+        ];
+
+        ReactDOM.createRoot(document.getElementById("clubApp")).render(
+            <div className='divChild'>
+                {clubsList.map(i=>(
+                    <div className='divChild1'>
+                        <ClubPoster data={i}/>
+                        <ClubInfo data={i}/>
+                        <ClubAchiev data={i}/>
+                        <ClubPlayers data={i}/>
+                    </div>  
+                    ))}
+            </div>
+          
+        )
+
+    </script>
+
+</body>
+</html>

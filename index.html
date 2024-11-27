@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Улюблений фільм</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Улюблений фільм</h1>
+    <div id="app"></div>
+    <script type="text/babel" src="Film.jsx"></script>
+    <script type="text/babel">
+
+        const myFilm = {
+            posterPath: '/img/posterTitanic.webp',
+            title: "Титанік", 
+            year: '1997', 
+            director: 'Джеймс Кемерон',
+            actors: 'Леонардо ДіКапріо, Кейт Вінслет, Біллі Зейн, Кеті Бейтс, Френсіс Фішер, Глорія Стюарт',
+            description: '"Титанік" (1997) - епічний романтичний фільм, який розповідає історію найбільшого корабельного катастрофи в історії, переплетену з непередбачуваною історією кохання. Головні ролі зіграли Кейт Вінслет (Роуз Дьюїтт Бюкейтер) та Леонардо ДіКапріо (Джек Доусон). Герої фільму, з різних соціальних верств, закохалися одне в одного на борту зловісного корабля, який здійснює свій рейс через північну Атлантику у 1912 році. Їхня неперевершена любовна історія розгортається на тлі величного корабля, який вважався найбільшим і найлукавішим в світі на той час. Розкішні декорації внутрішнього світу "Титаніка" створюють атмосферу розкіші і величі, яка контрастує з трагедією, що наближається. Фільм знаходить баланс між історичною точністю та митцевською свободою, створюючи потужну та емоційну драму.'
+        };
+
+        ReactDOM.createRoot(document.getElementById("app")).
+        render(
+            <React.StrictMode>            
+                <Film data={myFilm}/>
+            </React.StrictMode>
+        )
+
+    </script>
+</body>
+</html>
